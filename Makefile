@@ -6,7 +6,7 @@
 #    By: mazeghou <mazeghou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/22 17:50:00 by mazeghou          #+#    #+#              #
-#    Updated: 2024/12/23 16:10:33 by mazeghou         ###   ########.fr        #
+#    Updated: 2024/12/23 17:21:26 by mazeghou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ LIBS = -L$(MLX_DIR) -lmlx_Linux -L$(LIBFT_DIR) -lft -lm -lXext -lX11
 SCR_DIR = src
 GET_NEXT_LINE_DIR = include/get_next_line
 
-SRCS = $(SCR_DIR)/main.c $(SCR_DIR)/utils/check_map.c $(GET_NEXT_LINE_DIR)/get_next_line.c $(GET_NEXT_LINE_DIR)/get_next_line_utils.c
+SRCS = $(SCR_DIR)/main.c $(SCR_DIR)/utils/check_map.c $(GET_NEXT_LINE_DIR)/get_next_line.c $(GET_NEXT_LINE_DIR)/get_next_line_utils.c $(SCR_DIR)/utils/fill_map.c
 OBJS = $(SRCS:.c=.o)
 
 NAME = so_long
