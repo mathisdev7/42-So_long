@@ -6,7 +6,7 @@
 /*   By: mazeghou <mazeghou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 17:41:10 by mazeghou          #+#    #+#             */
-/*   Updated: 2024/12/23 18:22:00 by mazeghou         ###   ########.fr       */
+/*   Updated: 2024/12/24 13:25:06 by mazeghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,18 @@ typedef struct s_game
 	int		height;
 	int		width;
 	t_pos	player_pos;
+	t_pos	enemy_pos;
 	int		collectibles;
 	int		exit_found;
+	int		moves;
+	char	*map_path;
 }			t_game;
 
-int			check_map(char *map_path, t_game *game);
+int			check_map(t_game *game);
+int			check_path(t_game *game);
 void		fill_map(char *map_path, t_game *game);
 int			render(t_game *game);
+int			move_player(t_game *game, int key);
 char		**ft_split(char const *s, char c);
 
 #endif
