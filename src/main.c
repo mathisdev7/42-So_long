@@ -6,7 +6,7 @@
 /*   By: mazeghou <mazeghou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 17:33:19 by mazeghou          #+#    #+#             */
-/*   Updated: 2024/12/23 23:05:02 by mazeghou         ###   ########.fr       */
+/*   Updated: 2025/01/06 15:25:55 by mazeghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ int	main(int argc, char **argv)
 	if (!setup_game(&game, argv[1]))
 		return (1);
 	mlx_loop(game.mlx);
-	free(game.map_path);
+	close_window(&game);
 	return (0);
 }

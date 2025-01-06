@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../main.h"
 #include "score.h"
 #include <fcntl.h>
 #include <limits.h>

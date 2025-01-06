@@ -6,7 +6,7 @@
 /*   By: mazeghou <mazeghou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 17:41:10 by mazeghou          #+#    #+#             */
-/*   Updated: 2024/12/24 13:25:06 by mazeghou         ###   ########.fr       */
+/*   Updated: 2025/01/06 15:10:48 by mazeghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,7 @@ void		fill_map(char *map_path, t_game *game);
 int			render(t_game *game);
 int			move_player(t_game *game, int key);
 char		**ft_split(char const *s, char c);
-
+void		place_enemy(t_game *game);
+void		flood_fill(char **map, int x, int y, int *collectibles);
+char		*get_next_line(int fd);
 #endif

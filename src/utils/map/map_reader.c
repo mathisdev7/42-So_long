@@ -5,59 +5,78 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mazeghou <mazeghou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/23 19:15:00 by mazeghou          #+#    #+#             */
-/*   Updated: 2024/12/23 21:12:30 by mazeghou         ###   ########.fr       */
+/*   Created: 2024/01/06 17:30:00 by mazeghou          #+#    #+#             */
+/*   Updated: 2025/01/06 14:59:15 by mazeghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "map_reader.h"
-#include <fcntl.h>
+#include "../../main.h"
 
-int	count_lines(char *map_path)
+static char	**allocate_map(int height)
 {
-	int		fd;
-	int		count;
-	char	*line;
-
-	count = 0;
-	fd = open(map_path, O_RDONLY);
-	if (fd == -1)
-		return (0);
-	line = get_next_line(fd);
-	while (line)
-	{
-		count++;
-		free(line);
-		line = get_next_line(fd);
-	}
-	close(fd);
-	return (count);
-}
-
-char	**read_map_file(char *map_path, int height)
-{
-	int		fd;
-	char	*line;
 	char	**map;
-	int		i;
 
 	map = malloc(sizeof(char *) * (height + 1));
 	if (!map)
 		return (NULL);
+	return (map);
+}
+
+static void	free_allocated_lines(char **map, int i)
+{
+	while (--i >= 0)
+		free(map[i]);
+	free(map);
+}
+
+static int	open_map_file(char *map_path)
+{
+	int	fd;
+
 	fd = open(map_path, O_RDONLY);
-	if (fd == -1)
+	if (fd < 0)
+		return (-1);
+	return (fd);
+}
+
+static int	read_map_lines(char **map, int fd, int height)
+{
+	int	i;
+
+	i = 0;
+	while (i < height)
+	{
+		map[i] = get_next_line(fd);
+		if (!map[i])
+		{
+			free_allocated_lines(map, i);
+			return (0);
+		}
+		i++;
+	}
+	map[i] = NULL;
+	return (1);
+}
+
+char	**read_map_file(char *map_path, int height)
+{
+	char	**map;
+	int		fd;
+
+	map = allocate_map(height);
+	if (!map)
+		return (NULL);
+	fd = open_map_file(map_path);
+	if (fd < 0)
 	{
 		free(map);
 		return (NULL);
 	}
-	i = 0;
-	line = get_next_line(fd);
-	while (line)
+	if (!read_map_lines(map, fd, height))
 	{
-		map[i++] = line;
-		line = get_next_line(fd);
+		close(fd);
+		return (NULL);
 	}
-	map[i] = NULL;
 	close(fd);
 	return (map);
 }

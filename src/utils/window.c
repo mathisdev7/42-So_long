@@ -6,7 +6,7 @@
 /*   By: mazeghou <mazeghou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 23:42:00 by mazeghou          #+#    #+#             */
-/*   Updated: 2024/12/27 04:27:18 by mazeghou         ###   ########.fr       */
+/*   Updated: 2025/01/06 15:23:13 by mazeghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ int	close_window(t_game *game)
 		mlx_destroy_display(game->mlx);
 		free(game->mlx);
 	}
-	free_map(game);
 	if (game->map_path)
 		free(game->map_path);
+	if (game->map)
+		free_map(game);
 	exit(0);
 	return (0);
 }
