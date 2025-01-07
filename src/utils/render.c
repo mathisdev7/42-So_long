@@ -6,20 +6,16 @@
 /*   By: mazeghou <mazeghou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 23:42:00 by mazeghou          #+#    #+#             */
-/*   Updated: 2024/12/24 13:25:06 by mazeghou         ###   ########.fr       */
+/*   Updated: 2025/01/07 11:00:42 by mazeghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "render.h"
 
-static char	*get_image_path(char c, t_pos pos, t_game *game)
+static char	*get_image_path(char c)
 {
 	if (c == 'P')
-	{
-		if (pos.x == game->enemy_pos.x && pos.y == game->enemy_pos.y)
-			return ("./assets/enemy.xpm");
 		return ("./assets/player.xpm");
-	}
 	else if (c == '1')
 		return ("./assets/wall.xpm");
 	else if (c == 'C')
@@ -36,7 +32,7 @@ static void	put_image(t_game *game, t_pos pos, char c)
 	int		img_height;
 	char	*path;
 
-	path = get_image_path(c, pos, game);
+	path = get_image_path(c);
 	img = mlx_xpm_file_to_image(game->mlx, path, &img_width, &img_height);
 	if (!img)
 		return ;

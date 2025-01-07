@@ -6,7 +6,7 @@
 /*   By: mazeghou <mazeghou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 19:13:27 by mazeghou          #+#    #+#             */
-/*   Updated: 2024/12/23 23:36:47 by mazeghou         ###   ########.fr       */
+/*   Updated: 2025/01/07 11:02:09 by mazeghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ static int	can_move(t_game *game, int new_x, int new_y)
 
 	next_pos = game->map[new_y][new_x];
 	if (next_pos == '1')
-		return (0);
-	if (new_x == game->enemy_pos.x && new_y == game->enemy_pos.y)
 		return (0);
 	if (next_pos == 'C')
 		game->collectibles--;

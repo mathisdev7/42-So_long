@@ -6,7 +6,7 @@
 /*   By: mazeghou <mazeghou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 23:42:00 by mazeghou          #+#    #+#             */
-/*   Updated: 2024/12/23 23:41:18 by mazeghou         ###   ########.fr       */
+/*   Updated: 2025/01/07 11:00:27 by mazeghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ void	init_game(t_game *game)
 	game->width = 0;
 	game->player_pos.x = -1;
 	game->player_pos.y = -1;
-	game->enemy_pos.x = -1;
-	game->enemy_pos.y = -1;
 	game->collectibles = 0;
 	game->exit_found = 0;
 	game->moves = 0;

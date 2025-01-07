@@ -6,7 +6,7 @@
 /*   By: mazeghou <mazeghou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 19:11:00 by mazeghou          #+#    #+#             */
-/*   Updated: 2025/01/06 14:59:28 by mazeghou         ###   ########.fr       */
+/*   Updated: 2025/01/07 11:01:50 by mazeghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,5 @@ int	check_elements(t_game *game)
 			2);
 		return (0);
 	}
-	place_enemy(game);
 	return (1);
 }

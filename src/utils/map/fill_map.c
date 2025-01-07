@@ -6,7 +6,7 @@
 /*   By: mazeghou <mazeghou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 16:24:41 by mazeghou          #+#    #+#             */
-/*   Updated: 2024/12/27 04:22:03 by mazeghou         ###   ########.fr       */
+/*   Updated: 2025/01/07 11:02:02 by mazeghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,6 @@ static void	update_positions(t_game *game, int i, int j, int *found_player)
 		game->player_pos.x = j;
 		game->player_pos.y = i;
 		*found_player = 1;
-	}
-	else
-	{
-		game->enemy_pos.x = j;
-		game->enemy_pos.y = i;
 	}
 }
 

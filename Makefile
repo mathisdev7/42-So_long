@@ -6,7 +6,7 @@
 #    By: mazeghou <mazeghou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/22 17:50:00 by mazeghou          #+#    #+#              #
-#    Updated: 2025/01/06 15:16:22 by mazeghou         ###   ########.fr        #
+#    Updated: 2025/01/07 11:01:06 by mazeghou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,13 +32,7 @@ SRCS = src/main.c \
        src/utils/map/fill_map.c \
        src/utils/map/check_elements.c \
        src/utils/player/move_player.c \
-       src/utils/enemy/enemy.c \
-       src/utils/enemy/enemy_placement.c \
-       src/utils/enemy/enemy_validation.c \
-       src/utils/enemy/enemy_map.c \
-       src/utils/enemy/enemy_path.c \
        src/utils/handlers.c \
-       src/utils/score.c \
        src/utils/render.c \
        src/utils/init.c \
        src/utils/window.c \
